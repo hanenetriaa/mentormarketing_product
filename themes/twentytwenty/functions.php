@@ -801,20 +801,49 @@ function twentytwenty_get_elements_array()
 	 */
 	return apply_filters('twentytwenty_get_elements_array', $elements);
 }
-function cptui_register_my_cpts_mentormarketing_prod()
+function cptui_register_my_cpts()
 {
-
 	/**
-	 * Post Type: fichiers.
+	 * Post Type: mentormarketing_prod.
 	 */
 
 	$labels = [
-		"name" => __("fichiers", "twentytwenty"),
-		"singular_name" => __("fichier", "twentytwenty"),
+		"name" => __("mentormarketing_prod", "twentytwenty"),
+		"singular_name" => __("mentormarketing_prod", "twentytwenty"),
+		"menu_name" => __("Mon mentormarketing_prod", "twentytwenty"),
+		"all_items" => __("Tous les mentormarketing_prod", "twentytwenty"),
+		"add_new" => __("Ajouter un nouveau", "twentytwenty"),
+		"add_new_item" => __("Ajouter un nouveau mentormarketing_prod", "twentytwenty"),
+		"edit_item" => __("Modifier mentormarketing_prod", "twentytwenty"),
+		"new_item" => __("Nouveau mentormarketing_prod", "twentytwenty"),
+		"view_item" => __("Voir mentormarketing_prod", "twentytwenty"),
+		"view_items" => __("Voir mentormarketing_prod", "twentytwenty"),
+		"search_items" => __("Recherche de mentormarketing_prod", "twentytwenty"),
+		"not_found" => __("Aucun mentormarketing_prod trouvé", "twentytwenty"),
+		"not_found_in_trash" => __("Aucun mentormarketing_prod trouvé dans la corbeille", "twentytwenty"),
+		"parent" => __("mentormarketing_prod parent :", "twentytwenty"),
+		"featured_image" => __("Image mise en avant pour ce mentormarketing_prod", "twentytwenty"),
+		"set_featured_image" => __("Définir l’image mise en avant pour ce mentormarketing_prod", "twentytwenty"),
+		"remove_featured_image" => __("Retirer l’image mise en avant pour ce mentormarketing_prod", "twentytwenty"),
+		"use_featured_image" => __("Utiliser comme image mise en avant pour ce mentormarketing_prod", "twentytwenty"),
+		"archives" => __("Archives de mentormarketing_prod", "twentytwenty"),
+		"insert_into_item" => __("Insérer dans mentormarketing_prod", "twentytwenty"),
+		"uploaded_to_this_item" => __("Téléverser sur ce mentormarketing_prod", "twentytwenty"),
+		"filter_items_list" => __("Filtrer la liste de mentormarketing_prod", "twentytwenty"),
+		"items_list_navigation" => __("Navigation de liste de mentormarketing_prod", "twentytwenty"),
+		"items_list" => __("Liste de mentormarketing_prod", "twentytwenty"),
+		"attributes" => __("Attributs de mentormarketing_prod", "twentytwenty"),
+		"name_admin_bar" => __("mentormarketing_prod", "twentytwenty"),
+		"item_published" => __("mentormarketing_prod publié", "twentytwenty"),
+		"item_published_privately" => __("mentormarketing_prod publié en privé.", "twentytwenty"),
+		"item_reverted_to_draft" => __("mentormarketing_prod repassé en brouillon.", "twentytwenty"),
+		"item_scheduled" => __("mentormarketing_prod planifié", "twentytwenty"),
+		"item_updated" => __("mentormarketing_prod mis à jour.", "twentytwenty"),
+		"parent_item_colon" => __("mentormarketing_prod parent :", "twentytwenty"),
 	];
 
 	$args = [
-		"label" => __("fichiers", "twentytwenty"),
+		"label" => __("mentormarketing_prod", "twentytwenty"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -842,4 +871,4 @@ function cptui_register_my_cpts_mentormarketing_prod()
 	register_post_type("mentormarketing_prod", $args);
 }
 
-add_action('init', 'cptui_register_my_cpts_mentormarketing_prod');
+add_action('init', 'cptui_register_my_cpts');

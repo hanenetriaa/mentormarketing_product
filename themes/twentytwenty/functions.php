@@ -801,6 +801,12 @@ function twentytwenty_get_elements_array()
 	 */
 	return apply_filters('twentytwenty_get_elements_array', $elements);
 }
+
+/**
+ *creation de mon CPT 
+ *  Post Type: mentormarketing_prod.
+ */
+
 function cptui_register_my_cpts()
 {
 

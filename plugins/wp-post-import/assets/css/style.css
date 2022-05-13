@@ -1,0 +1,240 @@
+ @import url(https://fonts.googleapis.com/css?family=Montserrat);
+* {margin: 0; padding: 0;}
+html {
+    height: 100%;
+}
+body {
+    font-family: montserrat, arial, verdana;
+}
+
+#msform {
+    width: 50%;
+    margin: 0px 0px;
+    text-align: center;max-height: 500px; min-height: 500px;overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;border: 1px solid black; padding: 20px;    background: #f1f1f1; float: left;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+#msform input, #msform textarea {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #3674af;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #3674af;
+}
+
+/*headings*/
+
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: #23282d;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative;padding: 5px 0;font-weight: 600;
+}
+#progressbar li.active{background: transparent;}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 12px;
+    color: #3674af;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;     transition: .5s;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+   z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+}
+
+/*marking active/completed steps green*/
+
+/*The number of the step and the connector before it = green*/
+
+#progressbar li.active:before,  #progressbar li.active:after{
+    background: #3674af;
+    color: white;
+}
+#show_custom input[type="checkbox"] {
+    width: auto;
+}
+#msform .accordion {
+  background-color: #ccc;
+  color: #444;
+  cursor: pointer;
+  padding: 10px 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;    margin-bottom: 10px;
+}
+
+#msform .active, #msform .accordion:hover {
+  background-color: #ccc; 
+}
+#msform .file_error{
+    display: block;
+    color: red;
+}
+#msform .title_error{
+    display: none;
+    color: red;
+}
+#msform .panel {
+  padding: 0 18px;
+  display: none;
+  background-color: #f1f1f1;
+  overflow: hidden;    transition: .5s;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+#msform button.accordion.active {
+    margin: 0;
+}
+
+#msform input[type=radio]:checked:before{     background-color: #3674af; }
+
+#msform input[type="radio"]{     width: 15px;    border-radius: 100%;    margin: 0px 4px 10px 0; }
+#msform fieldset select#page_id {
+    width: 100%;
+}
+#progressbar li::after {
+    background: #fff;
+    content: "";
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 2px;
+    display: block;
+    right: calc(50% - -10px); transition: .5s;    left: inherit;
+    top: 15px;
+    z-index: 9;
+}
+#progressbar li.active::after {
+    background: #3674af;
+}
+.wppi_import_form{ padding-top: 50px;     position: relative; }
+.wppi_import_form h2.main-heading{ color: #3674af; font-size: 22px; }
+
+.csvdata, .xls_data {
+    float: right;
+    width: 40%;
+    margin: 0px 15px;    max-height: 500px;
+    overflow-y: auto;   
+}
+.csvdata { margin-bottom: 0px; }
+
+.csvdata table, .xls_data table   {
+    border: none;width: 100%;
+    border-spacing: 0;    padding-right: 20px;
+}
+
+.csvdata table td, .xls_data table td{
+    border: 1px solid #d1d1d1;
+    border-bottom: none;
+    padding: 3px 5px;    word-break: break-word;
+    min-width: 140px;vertical-align: top;}
+.csvdata table tr:last-child td, .xls_data table tr:last-child td{ border-bottom: 1px solid #d1d1d1;  }
+.password_outer .password-inner-change {
+    display: inline-block;    width: 48%; float: left;
+}
+.password_outer .password-inner-change.input-box{ text-align: right;width: 40%; }
+.password_outer .password-inner-change.input-name{ text-align: left;width: 60%; }
+.csvdata table td:first-child , .xls_data table td:first-child{ border-right: none;     font-weight: 600;
+    color: #3674af; }
+.wppi_import_form .success_message {
+    position: absolute;
+    top: 20px;
+    background: transparent;
+    color: #3674af;    font-weight: bold;
+}
+#msform .panel p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #f00;
+}
+span.wppi_error {
+    color: red;
+    font-size: 16px;
+    border: 1px solid red;
+    padding: 5px 75px;
+}
